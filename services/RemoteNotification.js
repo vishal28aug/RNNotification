@@ -1,6 +1,9 @@
 import React, {useEffect} from 'react';
 import PushNotification from 'react-native-push-notification';
 
+import * as RootNavigation from './RootNavigation';
+
+
 const RemoteNotification = () => {
   useEffect(() => {
     PushNotification.configure({
@@ -12,7 +15,8 @@ const RemoteNotification = () => {
       onNotification: function (notification) {
         console.log('onNotification:', notification);
 
-        // process the notification here
+        RootNavigation.navigate(notification.data.routeName || 'About');
+        
       },
 
       onAction: function (notification) {

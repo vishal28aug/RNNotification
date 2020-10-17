@@ -13,7 +13,8 @@ export const LocalNotification = () => {
     vibration: 300,
     playSound: true,
     soundName: 'default',
-    actions: '["Yes", "No"]'
+    actions: '["Yes", "No"]',
+    data: {routeName: 'About'}
   })
 }
 
